@@ -15,7 +15,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    padding: 10px;
+    padding: 1vmin; /* Ajustado para ser más responsivo */
     box-sizing: border-box;
     transition: background-color 0.5s ease-in-out;
     position: relative;
@@ -31,7 +31,7 @@ body::before {
     right: 0;
     bottom: 0;
     border-radius: 20px;
-    padding: 8px;
+    padding: 1.5vmin; /* Ajustado para ser más responsivo */
     background: linear-gradient(45deg, var(--color-amarillo), var(--color-azul), var(--color-rojo), var(--color-amarillo), var(--color-azul));
     background-size: 400% 400%;
     animation: bordeAnimado 10s ease infinite;
@@ -46,19 +46,19 @@ body::before {
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 6vmin; /* Responsivo */
     margin-bottom: 25px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 5vmin; /* Responsivo */
     margin-bottom: 15px;
     color: var(--color-rojo);
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 3.5vmin; /* Responsivo */
     margin: 8px 0;
 }
 
@@ -66,7 +66,7 @@ p {
 #pantalla-reglas {
     max-width: 90%;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 3vmin; /* Ajustado para ser más responsivo */
     border-radius: 15px;
 }
 
@@ -74,20 +74,20 @@ p {
     list-style: none;
     padding: 0;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin-top: 2vmin; /* Ajustado para ser más responsivo */
+    margin-bottom: 3vmin; /* Ajustado para ser más responsivo */
 }
 
 #pantalla-reglas li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
+    margin-bottom: 1.5vmin; /* Ajustado para ser más responsivo */
+    font-size: 3.2vmin; /* Responsivo */
     line-height: 1.4;
 }
 
 .botones-menu, .botones-opciones {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 2vmin; /* Ajustado para ser más responsivo */
     width: 100%;
     align-items: center;
 }
@@ -101,13 +101,13 @@ p {
     background-color: var(--color-amarillo);
     color: var(--color-azul);
     border: 3px solid var(--color-rojo);
-    padding: 12px 10px;
-    font-size: 1.1em;
+    padding: 2vmin 3vmin; /* Ajustado para ser más responsivo */
+    font-size: 3.5vmin; /* Responsivo */
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
-    width: 280px;
+    width: 60vmin; /* Ajustado para ser más responsivo */
     max-width: 90%;
     text-align: center;
     word-wrap: break-word;
@@ -137,21 +137,21 @@ p {
 .card-pregunta {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
-    padding: 15px;
+    padding: 3vmin; /* Ajustado para ser más responsivo */
     max-width: 90%;
-    margin-top: 15px;
+    margin-top: 3vmin; /* Ajustado para ser más responsivo */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    gap: 15px;
+    gap: 3vmin; /* Ajustado para ser más responsivo */
 }
 
 #pregunta-texto {
-    font-size: 1.3em;
+    font-size: 4vmin; /* Responsivo */
     margin-bottom: 0;
-    min-height: 70px;
+    min-height: 15vmin; /* Ajustado para ser más responsivo */
     display: flex;
     align-items: center;
     text-align: center;
@@ -165,12 +165,12 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 3vmin; /* Ajustado para ser más responsivo */
     flex-wrap: wrap; 
 }
 
 #contador-preguntas, #timer {
-    font-size: 1.8em;
+    font-size: 5vmin; /* Responsivo */
     font-weight: bold;
     color: var(--color-amarillo);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -180,27 +180,27 @@ p {
 
 .pausa-btn {
     width: auto;
-    padding: 8px 12px;
-    font-size: 0.9em;
+    padding: 1.5vmin 2.5vmin; /* Ajustado para ser más responsivo */
+    font-size: 3vmin; /* Responsivo */
 }
 
 .vidas {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 1vmin; /* Ajustado para ser más responsivo */
     flex-grow: 1;
     justify-content: center;
 }
 
 .vidas-texto {
-    font-size: 1.2em;
+    font-size: 3.5vmin; /* Responsivo */
     font-weight: bold;
-    margin-right: 5px;
+    margin-right: 1vmin; /* Ajustado para ser más responsivo */
 }
 
 .arepa {
-    width: 25px;
-    height: 25px;
+    width: 5vmin; /* Responsivo */
+    height: 5vmin; /* Responsivo */
     background-color: #f7e0a1;
     border-radius: 50%;
     border: 2px solid #a05e2c;
@@ -217,9 +217,9 @@ p {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 90vmin; /* Limita el tamaño máximo en pantallas grandes */
     min-height: 100vh;
-    padding: 10px;
+    padding: 2vmin; /* Ajustado para ser más responsivo */
     box-sizing: border-box;
 }
 
@@ -229,9 +229,9 @@ p {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 90vmin; /* Limita el tamaño máximo en pantallas grandes */
     min-height: 100vh;
-    padding: 10px;
+    padding: 2vmin; /* Ajustado para ser más responsivo */
     box-sizing: border-box;
 }
 
@@ -241,9 +241,12 @@ p {
 }
 
 #version-juego {
-    font-size: 0.9em;
-    opacity: 0.7;
+    font-size: 3vmin; /* Responsivo */
+    opacity: 0.8; /* Ligeramente más opaco para que se note más */
     color: black;
+    /* Aseguramos que no haya un margen excesivo que lo empuje */
+    margin-top: 2vmin; 
+    margin-bottom: 0;
 }
 
 #pantalla-creditos hr {
@@ -251,7 +254,7 @@ p {
     border: none;
     height: 1px;
     background-color: var(--color-rojo);
-    margin: 15px 0;
+    margin: 3vmin 0; /* Ajustado para ser más responsivo */
 }
 
 #pantalla-creditos ul {
