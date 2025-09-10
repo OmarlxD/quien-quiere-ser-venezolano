@@ -1,57 +1,261 @@
 :root {
-    /* Colores de la bandera de Venezuela */
     --color-amarillo: #ffc909;
     --color-azul: #002366;
     --color-rojo: #cf0e21;
 }
 
 body {
-    background-color: var(--color-azul); /* Fondo azul oscuro */
-    color: var(--color-amarillo); /* Letras amarillas */
+    background-color: var(--color-azul);
+    color: var(--color-amarillo);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     font-family: 'Arial', sans-serif;
     text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Borde animado */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 8px;
+    background: linear-gradient(45deg, var(--color-amarillo), var(--color-azul), var(--color-rojo), var(--color-amarillo), var(--color-azul));
+    background-size: 400% 400%;
+    animation: bordeAnimado 10s ease infinite;
+    z-index: -1;
+    box-sizing: border-box;
+}
+
+@keyframes bordeAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--color-rojo);
+}
+
+p {
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+/* Estilo para la nueva pantalla de reglas */
+#pantalla-reglas {
+    max-width: 90%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#pantalla-reglas ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#pantalla-reglas li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.botones-menu, .botones-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+}
+
+.botones-menu button,
+.opcion,
+#btn-volver-menu,
+#btn-reiniciar,
+.pausa-btn,
+#btn-comenzar {
+    background-color: var(--color-amarillo);
+    color: var(--color-azul);
+    border: 3px solid var(--color-rojo);
+    padding: 12px 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 280px;
+    max-width: 90%;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.botones-menu button:hover,
+.opcion:hover,
+#btn-volver-menu:hover,
+#btn-reiniciar:hover,
+.pausa-btn:hover,
+#btn-comenzar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--color-amarillo);
+}
+
+.opcion.correcta {
+    background-color: #28a745;
+    color: white;
+}
+
+.opcion.incorrecta {
+    background-color: #dc3545;
+    color: white;
+}
+
+.card-pregunta {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 15px;
+    max-width: 90%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 15px;
+}
+
+#pregunta-texto {
+    font-size: 1.3em;
+    margin-bottom: 0;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+}
+
+#info-juego {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap; 
+}
+
+#contador-preguntas, #timer {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--color-amarillo);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    flex-grow: 1;
+    text-align: center;
+}
+
+.pausa-btn {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.vidas {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.vidas-texto {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.arepa {
+    width: 25px;
+    height: 25px;
+    background-color: #f7e0a1;
+    border-radius: 50%;
+    border: 2px solid #a05e2c;
+}
+
+.arepa.perdida {
+    background-color: #888;
+    border-color: #555;
+}
+
+#pantalla-juego, #pantalla-fin-juego, #pantalla-creditos, #pantalla-reglas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #pantalla-menu {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-.botones-menu button {
-    background-color: var(--color-amarillo);
-    color: var(--color-azul);
-    border: 3px solid var(--color-rojo);
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
+#pantalla-menu h1 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.botones-menu button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--color-amarillo);
+#version-juego {
+    font-size: 0.9em;
+    opacity: 0.7;
+    color: black;
 }
 
-canvas {
-    background-color: #555;
-    border: 5px solid var(--color-rojo);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+#pantalla-creditos hr {
+    width: 80%;
+    border: none;
+    height: 1px;
+    background-color: var(--color-rojo);
+    margin: 15px 0;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+#pantalla-creditos ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
 }
