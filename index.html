@@ -17,6 +17,15 @@
         <p id="version-juego"></p>
     </div>
 
+    <div id="pantalla-modos" style="display: none;">
+        <h2>Selecciona un Modo de Juego</h2>
+        <div class="botones-modos-separados">
+            <button id="btn-modo-casual">Modo Casual</button>
+            <button id="btn-modo-speedrun">Modo Speedrun</button>
+        </div>
+        <button id="btn-volver-menu-modos">Volver al Menú</button>
+    </div>
+
     <div id="pantalla-creditos" style="display: none;">
         <h2>Créditos</h2>
         <p>Juego creado por</p>
@@ -31,8 +40,8 @@
         <button id="btn-volver-menu">Volver al Menú</button>
     </div>
 
-    <div id="pantalla-reglas" style="display: none;">
-        <h2>Reglas del Juego</h2>
+    <div id="pantalla-reglas-casual" style="display: none;">
+        <h2>Reglas del Modo Casual</h2>
         <p>¡Bienvenido! Para ser un verdadero venezolano, debes responder correctamente a las preguntas.</p>
         <ul>
             <li>Tienes 3 vidas, representadas por **Arepalifes**.</li>
@@ -41,14 +50,27 @@
             <li>El botón "Menú" no pausa el juego, solo te permite regresar al menú principal.</li>
             <li>¡Al perder todas tus vidas, el juego termina!</li>
         </ul>
-        <button id="btn-comenzar">¡Comenzar!</button>
+        <button id="btn-comenzar-casual">¡Comenzar!</button>
+    </div>
+
+    <div id="pantalla-reglas-speedrun" style="display: none;">
+        <h2>Reglas del Modo Speedrun</h2>
+        <p>¡Bienvenido al modo más desafiante!</p>
+        <ul>
+            <li>Tendrás un tiempo inicial de **10 segundos** para responder.</li>
+            <li>Por cada pregunta correcta, **sumarás 10 segundos** a tu tiempo.</li>
+            <li>Por cada respuesta incorrecta, **perderás 5 segundos**.</li>
+            <li>Tienes que responder correctamente a las 30 preguntas para ganar.</li>
+            <li>Si el tiempo llega a cero, el juego terminará. ¡Tu única meta es seguir respondiendo para acumular más tiempo!</li>
+        </ul>
+        <button id="btn-comenzar-speedrun">¡Comenzar!</button>
     </div>
 
     <div id="pantalla-juego" style="display: none;">
         <div id="info-juego">
             <button id="btn-pausa" class="pausa-btn">Menú</button>
             <p id="contador-preguntas">Pregunta 1</p>
-            <div class="vidas">
+            <div class="vidas" id="vidas-casual">
                 <span class="vidas-texto">Arepalifes</span>
                 <span id="arepa1" class="arepa"></span>
                 <span id="arepa2" class="arepa"></span>
@@ -70,7 +92,11 @@
     <div id="pantalla-fin-juego" style="display: none;">
         <h2 id="mensaje-final"></h2>
         <p id="puntuacion-final"></p>
-        <button id="btn-reiniciar">Jugar de Nuevo</button>
+        <p id="record-anterior"></p>
+        <div class="botones-final-juego">
+            <button id="btn-reiniciar">Jugar de Nuevo</button>
+            <button id="btn-volver-menu-final">Volver al Menú</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
