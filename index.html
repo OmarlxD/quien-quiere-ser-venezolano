@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quién Quiere Ser Venezolano?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="pantalla-menu">
+        <h1>¿Quién Quiere Ser Venezolano?</h1>
+        <div class="botones-menu">
+            <button id="btn-jugar">Jugar</button>
+            <button id="btn-creditos">Créditos</button>
+        </div>
+    </div>
+
+    <div id="pantalla-creditos" style="display: none;">
+        <h2>Créditos</h2>
+        <p>Juego creado por</p>
+        <p><strong>OmarlxD, youtuber Acarigueño.</strong></p>
+        <button id="btn-volver-menu">Volver al Menú</button>
+    </div>
+
+    <div id="pantalla-juego" style="display: none;">
+        <div id="info-juego">
+            <div class="vidas">
+                <span id="arepa1" class="arepa"></span>
+                <span id="arepa2" class="arepa"></span>
+                <span id="arepa3" class="arepa"></span>
+            </div>
+            <p id="timer">30</p>
+        </div>
+        <div class="card-pregunta">
+            <h3 id="pregunta-texto"></h3>
+            <div id="opciones-botones" class="botones-opciones">
+                <button class="opcion" data-opcion="0"></button>
+                <button class="opcion" data-opcion="1"></button>
+                <button class="opcion" data-opcion="2"></button>
+                <button class="opcion" data-opcion="3"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pantalla-fin-juego" style="display: none;">
+        <h2 id="mensaje-final"></h2>
+        <p id="puntuacion-final"></p>
+        <button id="btn-reiniciar">Jugar de Nuevo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

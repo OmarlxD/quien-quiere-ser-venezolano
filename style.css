@@ -1,0 +1,57 @@
+:root {
+    /* Colores de la bandera de Venezuela */
+    --color-amarillo: #ffc909;
+    --color-azul: #002366;
+    --color-rojo: #cf0e21;
+}
+
+body {
+    background-color: var(--color-azul); /* Fondo azul oscuro */
+    color: var(--color-amarillo); /* Letras amarillas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+#pantalla-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones-menu button {
+    background-color: var(--color-amarillo);
+    color: var(--color-azul);
+    border: 3px solid var(--color-rojo);
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.botones-menu button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--color-amarillo);
+}
+
+canvas {
+    background-color: #555;
+    border: 5px solid var(--color-rojo);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
