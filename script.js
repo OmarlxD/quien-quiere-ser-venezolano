@@ -35,7 +35,7 @@ const mensajeFinal = document.getElementById('mensaje-final');
 const puntuacionFinal = document.getElementById('puntuacion-final');
 const recordAnterior = document.getElementById('record-anterior');
 
-const VERSION_JUEGO = "0.7";
+const VERSION_JUEGO = "0.8";
 
 // --- Base de Datos de Preguntas ---
 const preguntasCasual = [
@@ -506,7 +506,9 @@ function manejarRespuesta(textoOpcion) {
 
         preguntasRespondidasCorrectamente++;
 
-        if (modoJuegoActual === 'speedrun') {
+        if (modoJuegoActual === 'casual') {
+             tiempoRestante = 30; // Aquí se corrige el tiempo
+        } else if (modoJuegoActual === 'speedrun') {
             tiempoRestante += 10;
         }
 
