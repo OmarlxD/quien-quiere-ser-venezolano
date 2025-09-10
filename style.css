@@ -15,7 +15,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     text-align: center;
-    padding: 1vmin; /* Ajustado para ser más responsivo */
+    padding: 1vmin;
     box-sizing: border-box;
     transition: background-color 0.5s ease-in-out;
     position: relative;
@@ -31,7 +31,7 @@ body::before {
     right: 0;
     bottom: 0;
     border-radius: 20px;
-    padding: 1.5vmin; /* Ajustado para ser más responsivo */
+    padding: 1.5vmin;
     background: linear-gradient(45deg, var(--color-amarillo), var(--color-azul), var(--color-rojo), var(--color-amarillo), var(--color-azul));
     background-size: 400% 400%;
     animation: bordeAnimado 10s ease infinite;
@@ -46,48 +46,71 @@ body::before {
 }
 
 h1 {
-    font-size: 6vmin; /* Responsivo */
+    font-size: 6vmin;
     margin-bottom: 25px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-    font-size: 5vmin; /* Responsivo */
+    font-size: 5vmin;
     margin-bottom: 15px;
     color: var(--color-rojo);
 }
 
 p {
-    font-size: 3.5vmin; /* Responsivo */
+    font-size: 3.5vmin;
     margin: 8px 0;
 }
 
-/* Estilo para la nueva pantalla de reglas */
-#pantalla-reglas {
+/* Estilo para la nueva pantalla de reglas y la de modos */
+#pantalla-reglas-casual,
+#pantalla-reglas-speedrun,
+#pantalla-modos {
     max-width: 90%;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 3vmin; /* Ajustado para ser más responsivo */
+    padding: 3vmin;
     border-radius: 15px;
 }
 
-#pantalla-reglas ul {
+#pantalla-reglas-casual ul,
+#pantalla-reglas-speedrun ul {
     list-style: none;
     padding: 0;
     text-align: center;
-    margin-top: 2vmin; /* Ajustado para ser más responsivo */
-    margin-bottom: 3vmin; /* Ajustado para ser más responsivo */
+    margin-top: 2vmin;
+    margin-bottom: 3vmin;
 }
 
-#pantalla-reglas li {
-    margin-bottom: 1.5vmin; /* Ajustado para ser más responsivo */
-    font-size: 3.2vmin; /* Responsivo */
+#pantalla-reglas-casual li,
+#pantalla-reglas-speedrun li {
+    margin-bottom: 1.5vmin;
+    font-size: 3.2vmin;
     line-height: 1.4;
 }
 
-.botones-menu, .botones-opciones {
+.botones-menu {
     display: flex;
     flex-direction: column;
-    gap: 2vmin; /* Ajustado para ser más responsivo */
+    gap: 2vmin;
+    width: 100%;
+    align-items: center;
+}
+
+/* Nueva clase para centrar y separar los botones de los modos de juego */
+.botones-modos-separados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vmin; /* Espacio más grande entre los botones */
+    width: 100%;
+    margin-bottom: 3vmin;
+}
+
+/* Contenedor para los botones de la pantalla final */
+.botones-final-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
     width: 100%;
     align-items: center;
 }
@@ -97,17 +120,22 @@ p {
 #btn-volver-menu,
 #btn-reiniciar,
 .pausa-btn,
-#btn-comenzar {
+#btn-comenzar-casual,
+#btn-comenzar-speedrun,
+#btn-modo-casual,
+#btn-modo-speedrun,
+#btn-volver-menu-modos,
+#btn-volver-menu-final {
     background-color: var(--color-amarillo);
     color: var(--color-azul);
     border: 3px solid var(--color-rojo);
-    padding: 2vmin 3vmin; /* Ajustado para ser más responsivo */
-    font-size: 3.5vmin; /* Responsivo */
+    padding: 2vmin 3vmin;
+    font-size: 3.5vmin;
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
-    width: 60vmin; /* Ajustado para ser más responsivo */
+    width: 60vmin;
     max-width: 90%;
     text-align: center;
     word-wrap: break-word;
@@ -119,7 +147,12 @@ p {
 #btn-volver-menu:hover,
 #btn-reiniciar:hover,
 .pausa-btn:hover,
-#btn-comenzar:hover {
+#btn-comenzar-casual:hover,
+#btn-comenzar-speedrun:hover,
+#btn-modo-casual:hover,
+#btn-modo-speedrun:hover,
+#btn-volver-menu-modos:hover,
+#btn-volver-menu-final:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px var(--color-amarillo);
 }
@@ -137,21 +170,21 @@ p {
 .card-pregunta {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
-    padding: 3vmin; /* Ajustado para ser más responsivo */
+    padding: 3vmin;
     max-width: 90%;
-    margin-top: 3vmin; /* Ajustado para ser más responsivo */
+    margin-top: 3vmin;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    gap: 3vmin; /* Ajustado para ser más responsivo */
+    gap: 5vmin; /* Aumentado para separar las opciones */
 }
 
 #pregunta-texto {
-    font-size: 4vmin; /* Responsivo */
+    font-size: 4vmin;
     margin-bottom: 0;
-    min-height: 15vmin; /* Ajustado para ser más responsivo */
+    min-height: 15vmin;
     display: flex;
     align-items: center;
     text-align: center;
@@ -165,12 +198,12 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3vmin; /* Ajustado para ser más responsivo */
-    flex-wrap: wrap; 
+    margin-bottom: 3vmin;
+    flex-wrap: wrap;
 }
 
 #contador-preguntas, #timer {
-    font-size: 5vmin; /* Responsivo */
+    font-size: 5vmin;
     font-weight: bold;
     color: var(--color-amarillo);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -180,27 +213,27 @@ p {
 
 .pausa-btn {
     width: auto;
-    padding: 1.5vmin 2.5vmin; /* Ajustado para ser más responsivo */
-    font-size: 3vmin; /* Responsivo */
+    padding: 1.5vmin 2.5vmin;
+    font-size: 3vmin;
 }
 
 .vidas {
     display: flex;
     align-items: center;
-    gap: 1vmin; /* Ajustado para ser más responsivo */
+    gap: 1vmin;
     flex-grow: 1;
     justify-content: center;
 }
 
 .vidas-texto {
-    font-size: 3.5vmin; /* Responsivo */
+    font-size: 3.5vmin;
     font-weight: bold;
-    margin-right: 1vmin; /* Ajustado para ser más responsivo */
+    margin-right: 1vmin;
 }
 
 .arepa {
-    width: 5vmin; /* Responsivo */
-    height: 5vmin; /* Responsivo */
+    width: 5vmin;
+    height: 5vmin;
     background-color: #f7e0a1;
     border-radius: 50%;
     border: 2px solid #a05e2c;
@@ -211,15 +244,15 @@ p {
     border-color: #555;
 }
 
-#pantalla-juego, #pantalla-fin-juego, #pantalla-creditos, #pantalla-reglas {
+#pantalla-juego, #pantalla-fin-juego, #pantalla-creditos, #pantalla-reglas-casual, #pantalla-reglas-speedrun, #pantalla-modos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 90vmin; /* Limita el tamaño máximo en pantallas grandes */
+    max-width: 90vmin;
     min-height: 100vh;
-    padding: 2vmin; /* Ajustado para ser más responsivo */
+    padding: 2vmin;
     box-sizing: border-box;
 }
 
@@ -229,9 +262,9 @@ p {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    max-width: 90vmin; /* Limita el tamaño máximo en pantallas grandes */
+    max-width: 90vmin;
     min-height: 100vh;
-    padding: 2vmin; /* Ajustado para ser más responsivo */
+    padding: 2vmin;
     box-sizing: border-box;
 }
 
@@ -241,11 +274,10 @@ p {
 }
 
 #version-juego {
-    font-size: 3vmin; /* Responsivo */
-    opacity: 0.8; /* Ligeramente más opaco para que se note más */
+    font-size: 3vmin;
+    opacity: 0.8;
     color: black;
-    /* Aseguramos que no haya un margen excesivo que lo empuje */
-    margin-top: 2vmin; 
+    margin-top: 2vmin;
     margin-bottom: 0;
 }
 
@@ -254,7 +286,7 @@ p {
     border: none;
     height: 1px;
     background-color: var(--color-rojo);
-    margin: 3vmin 0; /* Ajustado para ser más responsivo */
+    margin: 3vmin 0;
 }
 
 #pantalla-creditos ul {
