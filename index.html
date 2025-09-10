@@ -14,18 +14,42 @@
             <button id="btn-jugar">Jugar</button>
             <button id="btn-creditos">Créditos</button>
         </div>
+        <p id="version-juego"></p>
     </div>
 
     <div id="pantalla-creditos" style="display: none;">
         <h2>Créditos</h2>
         <p>Juego creado por</p>
         <p><strong>OmarlxD, youtuber Acarigueño.</strong></p>
+        <hr>
+        <h3>Versiones Beta</h3>
+        <p>Personas VIP que probaron las versiones beta:</p>
+        <ul>
+            <li>Yamiii</li>
+            <li>Mili<3</li>
+        </ul>
         <button id="btn-volver-menu">Volver al Menú</button>
+    </div>
+
+    <div id="pantalla-reglas" style="display: none;">
+        <h2>Reglas del Juego</h2>
+        <p>¡Bienvenido! Para ser un verdadero venezolano, debes responder correctamente a las preguntas.</p>
+        <ul>
+            <li>Tienes 3 vidas, representadas por **Arepalifes**.</li>
+            <li>Si respondes incorrectamente, pierdes una vida y debes seguir intentando la misma pregunta.</li>
+            <li>Si se acaba el tiempo (30 segundos), también pierdes una vida y pasas a la siguiente pregunta.</li>
+            <li>El botón "Menú" no pausa el juego, solo te permite regresar al menú principal.</li>
+            <li>¡Al perder todas tus vidas, el juego termina!</li>
+        </ul>
+        <button id="btn-comenzar">¡Comenzar!</button>
     </div>
 
     <div id="pantalla-juego" style="display: none;">
         <div id="info-juego">
+            <button id="btn-pausa" class="pausa-btn">Menú</button>
+            <p id="contador-preguntas">Pregunta 1</p>
             <div class="vidas">
+                <span class="vidas-texto">Arepalifes</span>
                 <span id="arepa1" class="arepa"></span>
                 <span id="arepa2" class="arepa"></span>
                 <span id="arepa3" class="arepa"></span>
